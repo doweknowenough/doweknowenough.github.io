@@ -29,6 +29,10 @@ def extract_name(data_point):
 	return act_name, repealed_by
 
 if __name__ == '__main__':
+	
+	# repealed.txt is made by copying HTML code of repealed act section 
+	# from Indiacode website. Further edited to remove useless text
+
 	actfile_name = "/Volumes/Macintosh_HD2/Github/doweknowenough.github.io/laws-orders/helpers/repealed.txt"
 	actcsvfile_name = "/Volumes/Macintosh_HD2/Github/doweknowenough.github.io/laws-orders/helpers/repealedactstest.csv"
 	num_lines = 15315
