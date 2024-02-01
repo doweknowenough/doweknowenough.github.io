@@ -23,7 +23,7 @@ if __name__ == '__main__':
 				os.makedirs(directory2)
 				file_path = directory2
 				file_path+="/index.html"
-				write_text = ["<html>\n","\t<head>\n","\t\t<title>",lines[0],"</title>\n","\t</head>\n","\t<body>\n","\t\t<a href='",link,"'>Indiacode Link</a>\n",
+				write_text = ["<html>\n","\t<head>\n","\t\t<title>",name,", ",year,"</title>\n","\t</head>\n","\t<body>\n","\t\t<a href='",link,"'>Indiacode Link</a>\n",
 				"\t\t<h3>","Amendments made to the act</h3>\n",
 				"\t\t<ol>\n",
 					"\t\t\t<li>\n",
@@ -95,7 +95,7 @@ if __name__ == '__main__':
 					"\t\t\t</li>\n",
 				"\t\t</ol>\n",
 				"\t</body>\n","</html>"]
-				write_text2 = ["<li>\n","\t","<a href='./acts/",year,"-",num,"/'>",name,"</a>\n","</li>\n"]
+				write_text2 = ["<li>\n","\t","<a href='./acts/",year,"-",num,"/'>",name,", ",year,"</a>\n","</li>\n"]
 				with open(file_path, "w") as file1:
 				    file1.writelines(write_text)
 				
