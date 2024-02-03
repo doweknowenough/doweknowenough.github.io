@@ -1,0 +1,26 @@
+/*Headings- Act name, Act number, Date of enactment*/
+h4.act-date-heading{text-align: right;}
+h4.act-number-heading{text-align: center;}
+h1.actheading{text-align: center;}
+
+
+
+/*Section and schedule enumeration*/
+div.index{font-style: italic;}
+a.sectionheading {text-decoration: none;color: black;font-style: italic;}
+
+/*Actual Act*/
+div.sectionheading{text-align: center;}
+div.omitted{display: none;}
+
+
+
+/*References*/
+sup.reference{font-size: xx-small;}
+
+a.reference{font-style: italic;}
+
+
+
+/*Amendments*/
+a.amendment{font-style: italic;}
