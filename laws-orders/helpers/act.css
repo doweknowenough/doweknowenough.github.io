@@ -1,3 +1,5 @@
+body{font-family: Calibri, Optima, sans-serif;}
+
 /*Headings- Act name, Act number, Date of enactment*/
 h4.act-date-heading{text-align: right;}
 h4.act-number-heading{text-align: center;}

@@ -5,7 +5,7 @@ function swap(id1,id2) {
 	document.getElementById(id2).innerHTML = cont1;
 }
 
-function visibility(id1,status){
+function insertion(id1,status){
 	var elements = document.getElementsByClassName(id1);
 	var action = "none";
 	if(status=="1"){
@@ -16,7 +16,7 @@ function visibility(id1,status){
 	}
 }
 
-function omissionswap(class_name, id, status){
+function omission(class_name, id, status){
 	var element1 = document.getElementsByClassName(class_name)[0];
 	var element2 = document.getElementById(id);
 	var action1 = "inline";
@@ -33,10 +33,12 @@ function omissionswap(class_name, id, status){
 	element2.style.display = action2;
 }
 
-function addcontent(id){
-
+function substitution(class_name, id){
+	var element1 = document.getElementsByClassName(class_name)[0];
+	var element2 = document.getElementById(id);
+	let cont1 = element1.innerHTML;
+	let cont2 = element2.innerHTML;
+	element1.innerHTML = cont2;
+	element2.innerHTML = cont1;
 }
 
-function removecontent(id){
-
-}
