@@ -31,3 +31,16 @@ div.page-break{page-break-after: always;}*/
 
 /*Amendments*/
 /*a.amendment{font-style: italic;}*/
+
+/*
+preamble
+part: number, title
+--chapter: number, title
+----article: number, title
+------content
+------clause: number, content, provision
+------provision
+--------subclause: number, title, provision
+schedules
+constitution orders
+*/
