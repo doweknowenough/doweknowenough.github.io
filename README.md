@@ -11,7 +11,7 @@
 8. No webpages or links to pdfs of amending acts
 
 
-## Encounters (Refer to Disclaimer [here](./laws-orders/index.html))
+## Encounters (Refer to Disclaimer [here](../../laws-orders/))
 
 ## Non monetary contribution
 Follow these pointers. Raise an issue if any doubt.
