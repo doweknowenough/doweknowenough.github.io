@@ -11,6 +11,8 @@
 8. No webpages or links to pdfs of amending acts
 
 
+## Encounters (Refer to Disclaimer [here](./laws-orders/))
+
 In case someone wants to contribute, follow these pointers. Raise an issue if any doubt.
 
 ## Step 1

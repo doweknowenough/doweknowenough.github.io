@@ -101,6 +101,18 @@
         </ol>
 
         <h3>
+            Disclaimer
+        </h3>
+        <ol>
+            <li>
+                Currently we are not handling amendments to a amending act or repeals of repealing acts or repealing of amendment acts or amendment of repealing acts. Make note of such instance when encountered in Readme file
+            </li>
+            <li>
+                No functionality of accumulating judgements of courts staying a act or a provision or declaring it ultra vires
+            </li>
+        </ol>
+
+        <h3>
         	Tips
         </h3>
         <ol>
@@ -126,7 +138,7 @@
                 Need to evolve a data structure type thing for pieces here- duration of being in force. This would also eliminate the need of mentioning separate data, webpage etc for repealed acts. Instead provide a functionality of listing principle acts not currently in force. The acts not in force are by default repealed. Only exception is not being notified in gazette like the 44th CAA provision on detention. Keep two dates for every act- beginning and end of duration of being in force. Repealed would mean no date is null; not notified means both end and start dates are null; only end being null means currently in force.
             </li>
             <li>
-                We are not working on operationalising amendments. Operationalising Amendments- They can be included by associating a script with them. Script would be called from the principal act which would send the date and the act number to notify the amendment script which act is calling to them. Or there can be a separate script for each principal act. Remember that every amending act can amend multiple acts and other legislation, whether principle or amending, can repeal a section of amending act. So the date variables need to be maintained at section level. Currently we are not handling amendments to a amending act.
+                We are not working on operationalising amendments. Operationalising Amendments- They can be included by associating a script with them. Script would be called from the principal act which would send the date and the act number to notify the amendment script which act is calling to them. Or there can be a separate script for each principal act. Remember that every amending act can amend multiple acts and other legislation, whether principle or amending, can repeal a section of amending act. So the date variables need to be maintained at section level.
             </li>
             <li>
                 What about rules formed by PSUs?
@@ -141,10 +153,7 @@
                 When finished significantly, develop a dynamic software which shows what the act looked like after this amendment i.e. starting with act passed in its original form, I should be able to see what the act looked like before the penultimate amendment to the act was passed
             </li>
             <li>
-                If possible, make different sections which can then be combined into codes. This listing can be made on the home page of this section only. Eg- Finance section shall incorporate Indian Sharemarket Code which shall incorporate SEBI Act, Securities Act etc.
-            </li>
-            <li>
-                What about amendments by state governments? Should they be included in the respective state sections?
+                Amendments by state governments are to be included in state sections when they are created
             </li>
         </ol>
     	
