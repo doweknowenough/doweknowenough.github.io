@@ -123,7 +123,10 @@
         		Any act amending multiple acts shall be placed under heading of all such acts
         	</li>
             <li>
-                Repealed acts should also go to "acts" folder with similar scheme of naming folder
+                Need to evolve a data structure type thing for pieces here- duration of being in force. This would also eliminate the need of mentioning separate data, webpage etc for repealed acts. Instead provide a functionality of listing principle acts not currently in force. The acts not in force are by default repealed. Only exception is not being notified in gazette like the 44th CAA provision on detention. Keep two dates for every act- beginning and end of duration of being in force. Repealed would mean no date is null; not notified means both end and start dates are null; only end being null means currently in force.
+            </li>
+            <li>
+                We are not working on operationalising amendments. Operationalising Amendments- They can be included by associating a script with them. Script would be called from the principal act which would send the date and the act number to notify the amendment script which act is calling to them. Or there can be a separate script for each principal act. Remember that every amending act can amend multiple acts and other legislation, whether principle or amending, can repeal a section of amending act. So the date variables need to be maintained at section level. Currently we are not handling amendments to a amending act.
             </li>
             <li>
                 What about rules formed by PSUs?
