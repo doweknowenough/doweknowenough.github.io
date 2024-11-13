@@ -32,8 +32,8 @@ div.page-break{page-break-after: always;}*/
 /*Amendments*/
 /*a.amendment{font-style: italic;}*/
 
-/*
-preamble
+
+/*preamble
 part: number, title
 --chapter: number, title
 ----article: number, title
@@ -43,6 +43,18 @@ part: number, title
 --------subclause: number, title, provision
 schedules
 constitution orders
+Use children/ sibling etc type css functionality
+Note- with each sublevel, there should be addition in margin in terms of percentage i.e. 10% to 15% to 20% types. Also see the effect on smaller screens like phones*/
 
-Note- with each sublevel, there should be addition in margin in terms of percentage i.e. 10% to 15% to 20% types. Also see the effect on smaller screens like phones
-*/
+
+
+
+
+
+
+
+
+
+
+
+
