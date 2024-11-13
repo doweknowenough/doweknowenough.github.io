@@ -1,6 +1,8 @@
 <html>
     <head>
-        <title>Law</title>
+        <!-- <title>Legislature Acts & Executive Actions</title> -->
+        <!-- <title>Acts of Legislature & Actions of Executive</title> -->
+        <title>Parliamentary Acts & Government Actions</title>
         <link rel="icon" type="image/x-icon" href="./helpers/favicon.ico">
     </head>
     <body>
@@ -110,53 +112,8 @@
             <li>
                 No functionality of accumulating judgements of courts staying a act or a provision or declaring it ultra vires
             </li>
-        </ol>
-
-        <h3>
-        	Tips
-        </h3>
-        <ol>
-        	<li>
-        		Patience is important. Tracking such large amount of data is going to take years
-        	</li>
             <li>
-                Change in strategy: Need to add link to legislations rather than text versions. Link could be to gazette, Sansad library, Archive etc or link to act after every amendment
-            </li>
-            <li>
-                Ordering shall be done by year of passing of the principal act
-            </li>
-            <li>
-                Rules, Circulars, Notifications are to be collected
-            </li>
-        	<li>
-        		Amending legislations shall be listed in decreasing order of coming into force
-        	</li>
-        	<li>
-        		Any act amending multiple acts shall be placed under heading of all such acts
-        	</li>
-            <li>
-                Need to evolve a data structure type thing for pieces here- duration of being in force. This would also eliminate the need of mentioning separate data, webpage etc for repealed acts. Instead provide a functionality of listing principle acts not currently in force. The acts not in force are by default repealed. Only exception is not being notified in gazette like the 44th CAA provision on detention. Keep two dates for every act- beginning and end of duration of being in force. Repealed would mean no date is null; not notified means both end and start dates are null; only end being null means currently in force.
-            </li>
-            <li>
-                We are not working on operationalising amendments. Operationalising Amendments- They can be included by associating a script with them. Script would be called from the principal act which would send the date and the act number to notify the amendment script which act is calling to them. Or there can be a separate script for each principal act. Remember that every amending act can amend multiple acts and other legislation, whether principle or amending, can repeal a section of amending act. So the date variables need to be maintained at section level. Many amending acts amend only a part of a clause wef from a certain date. Any data structure to implement an amendment shall also account for this.
-            </li>
-            <li>
-                Maintaining list of duration of provision being in force and for current status just do duration_list[-1]
-            </li>
-            <li>
-                What about rules formed by PSUs?
-            </li>
-            <li>
-                What about Finance Acts?
-            </li>
-            <li>
-                In future, see if it is possible to track complete history of the act i.e. keeping a record what was changed via every amendment
-            </li>
-            <li>
-                When finished significantly, develop a dynamic software which shows what the act looked like after this amendment i.e. starting with act passed in its original form, I should be able to see what the act looked like before the penultimate amendment to the act was passed
-            </li>
-            <li>
-                Amendments by state governments are to be included in state sections when they are created
+                State acts not included currently. Amendments by state governments are to be included in state sections when they are created
             </li>
         </ol>
     	
