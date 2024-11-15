@@ -46,7 +46,56 @@ constitution orders
 Use children/ sibling etc type css functionality
 Note- with each sublevel, there should be addition in margin in terms of percentage i.e. 10% to 15% to 20% types. Also see the effect on smaller screens like phones*/
 
+/*
+Preamble{}
 
+Parts{
+	Part{
+		Chapter{
+			Sub-chapter{
+				Article{
+					Heading{
+						Index
+						Title
+					}
+					Content{
+						Non-enumerated-content
+						Enumerated-content (Clause){
+							Index
+							Non-enumerated-content
+							Enumerated-content (Sub-clause){
+								Index
+								Content
+							}
+						}
+						Proviso{
+							Non-enumerated-content
+							Enumerated-content (Clause){
+								Index
+								Content
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+Schedules{
+	Schedule{
+		Heading{
+			Index
+			Title
+		}
+		Content{}
+	}
+}
+Constitution Orders{
+	Constitution Order{
+		
+	}
+}
+*/
 
 
 
