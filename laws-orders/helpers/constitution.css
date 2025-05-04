@@ -1,5 +1,31 @@
-div.part-heading{
+.document-container{
+	width: 95%;
+	margin: auto;
+}
+
+.part-container{
+	padding-top: 10%;
+}
+
+.schedule-container{
+	padding-top: 10%;
+}
+
+.article-container{
+	padding-top: 3%;
+}
+
+.part-heading{
 	text-align: center;
+}
+
+.schedule-heading{
+	text-align: center;
+}
+
+.article-heading{
+	text-align: center;
+	padding-bottom: 1%;
 }
 
 /*body{font-family: Calibri, Optima, sans-serif;}*/
