@@ -1,10 +1,22 @@
+.nav-bar{
+	/**/
+}
+
+select{
+	max-width: 20%;
+}
+
 .document-container{
 	width: 95%;
 	margin: auto;
 }
 
+.preamble-container{
+	padding-top: 3%;
+}
+
 .part-container{
-	padding-top: 10%;
+	padding-top: 5%;
 }
 
 .schedule-container{
@@ -12,16 +24,20 @@
 }
 
 .chapter-container{
-
+	/**/
 }
 
 .sub-chapter-container{
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 3%;
+	padding-bottom: 3%;
 }
 
 .article-container{
-	padding-top: 3%;
+	padding-top: 1%;
+}
+
+.preamble-heading{
+	text-align: center;
 }
 
 .part-heading{
@@ -43,6 +59,12 @@
 .article-heading{
 	text-align: center;
 	padding-bottom: 1%;
+}
+
+.preamble-content{
+	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
+	text-align: justify;
+	text-align-last: left;
 }
 
 .article-content{
