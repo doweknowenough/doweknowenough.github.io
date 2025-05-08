@@ -1,3 +1,5 @@
+/*Add text-align-left class, of bootstrap, whereever needed*/
+
 .nav-bar{
 	/**/
 }
@@ -9,6 +11,10 @@ select{
 .document-container{
 	width: 95%;
 	margin: auto;
+}
+
+.supplementary-provisions-container{
+	visibility: hidden;
 }
 
 .preamble-container{
@@ -36,6 +42,10 @@ select{
 	padding-top: 1%;
 }
 
+.sp-container{
+	/**/
+}
+
 .preamble-heading{
 	text-align: center;
 }
@@ -61,6 +71,10 @@ select{
 	padding-bottom: 1%;
 }
 
+.sp-heading{
+	/**/
+}
+
 .preamble-content{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
 	text-align: justify;
@@ -71,6 +85,34 @@ select{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
 	text-align: justify;
 	text-align-last: left;
+}
+
+.sp-content{
+	/**/
+}
+
+.clause{
+	/**/
+}
+
+.sub-clause{
+	/*display: inline-block;*/
+}
+
+.clause-index{
+	/**/
+}
+
+.sub-clause-index{
+	/**/
+}
+
+.clause-content{
+	/**/
+}
+
+.sub-clause-content{
+	/**/
 }
 
 /*body{font-family: Calibri, Optima, sans-serif;}*/
@@ -118,52 +160,28 @@ Use children/ sibling etc type css functionality
 Note- with each sublevel, there should be addition in margin in terms of percentage i.e. 10% to 15% to 20% types. Also see the effect on smaller screens like phones*/
 
 /*
-Preamble{}
-
-Parts{
-	Part{
-		Chapter{
-			Sub-chapter{
-				Article{
-					Heading{
-						Index
-						Title
-					}
-					Content{
-						Non-enumerated-content
-						Enumerated-content (Clause){
-							Index
-							Non-enumerated-content
-							Enumerated-content (Sub-clause){
-								Index
-								Content
-							}
-						}
-						Proviso{
-							Non-enumerated-content
-							Enumerated-content (Clause){
-								Index
-								Content
-							}
-						}
-					}
-				}
+Article{
+	Heading{
+		Index
+		Title
+	}
+	Content{
+		Non-enumerated-content
+		Enumerated-content (Clause){
+			Index
+			Non-enumerated-content
+			Enumerated-content (Sub-clause){
+				Index
+				Content
 			}
 		}
-	}
-}
-Schedules{
-	Schedule{
-		Heading{
-			Index
-			Title
+		Proviso{
+			Non-enumerated-content
+			Enumerated-content (Clause){
+				Index
+				Content
+			}
 		}
-		Content{}
-	}
-}
-Constitution Orders{
-	Constitution Order{
-		
 	}
 }
 */
