@@ -35,33 +35,148 @@ document-container{
 }
 */
 
+/*Add text-align-left class, of bootstrap, whereever needed*/
 
-body{font-family: Calibri, Optima, sans-serif;}
+section{
+	display: inline-block;
+}
+
+.document-container{
+	width: 95%;
+	margin: auto;
+}
+
+.supplementary-provisions-container{
+	visibility: hidden;
+}
+
+.chapter-container{
+	/**/
+}
+
+.sub-chapter-container{
+	/*padding-top: 3%;*/
+	/*padding-bottom: 3%;*/
+}
+
+.section-container{
+	/*padding-top: 1%;*/
+}
+
+.schedule-container{
+	/*padding-top: 10%;*/
+}
+
+.sp-container{
+	/**/
+}
+
+.chapter-heading{
+	text-align: center;
+}
+
+.sub-chapter-heading{
+	text-align: center;
+}
+
+.section-heading{
+	text-align: center;
+	/*padding-bottom: 1%;*/
+}
+
+.schedule-heading{
+	text-align: center;
+}
+
+.sp-heading{
+	/**/
+}
+
+.section-content{
+	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
+	/*text-align: justify;*/
+	/*text-align-last: left;*/
+	padding-left: 0%;
+}
+
+.sp-content{
+	/**/
+}
+
+.enumeration{
+	/**/
+}
+
+.enumeration-index{
+	/**/
+}
+
+.enumeration-content{
+	/**/
+}
+
+.provision{
+	/**/
+}
+
+/*body{font-family: Calibri, Optima, sans-serif;}*/
 
 /*Headings- Act name, Act number, Date of enactment*/
-h4.act-date-heading{text-align: right;}
+/*h4.act-date-heading{text-align: right;}
 h4.act-number-heading{text-align: center;}
-h1.actheading{text-align: center;}
+h1.actheading{text-align: center;}*/
 
 
 
 /*Section and schedule enumeration*/
-div.index{font-style: italic;}
-a.sectionheading {text-decoration: none;color: black;font-style: italic;}
+/*div.index{font-style: italic;}
+a.sectionheading {text-decoration: none;color: black;font-style: italic;}*/
 
 /*Actual Act*/
-div.sectionheading{text-align: center;}
+/*div.sectionheading{text-align: center;}
 div.omitted{display: none;}
-div.page-break{page-break-after: always;}
+div.page-break{page-break-after: always;}*/
 
 
 
 /*References*/
-sup.reference{font-size: xx-small;}
+/*sup.reference{font-size: xx-small;}*/
 
-a.reference{font-style: italic;}
+/*a.reference{font-style: italic;}*/
 
 
 
 /*Amendments*/
-a.amendment{font-style: italic;}
+/*a.amendment{font-style: italic;}*/
+
+
+
+/*body{font-family: Calibri, Optima, sans-serif;}*/
+
+/*Headings- Act name, Act number, Date of enactment*/
+/*h4.act-date-heading{text-align: right;}*/
+/*h4.act-number-heading{text-align: center;}*/
+/*h1.actheading{text-align: center;}*/
+
+
+
+/*Section and schedule enumeration*/
+/*div.index{font-style: italic;}*/
+/*a.sectionheading {text-decoration: none;color: black;font-style: italic;}*/
+
+/*Actual Act*/
+/*div.sectionheading{text-align: center;}*/
+/*div.omitted{display: none;}*/
+/*div.page-break{page-break-after: always;}*/
+
+
+
+/*References*/
+/*sup.reference{font-size: xx-small;}*/
+
+/*a.reference{font-style: italic;}*/
+
+
+
+/*Amendments*/
+/*a.amendment{font-style: italic;}*/
