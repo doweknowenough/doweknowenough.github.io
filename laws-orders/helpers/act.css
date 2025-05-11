@@ -38,7 +38,7 @@ document-container{
 /*Add text-align-left class, of bootstrap, whereever needed*/
 
 section{
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .document-container{
