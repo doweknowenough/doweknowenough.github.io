@@ -1,3 +1,41 @@
+/*
+document-container{
+	arrangement{
+		sections-index{
+			index-container{
+				Index
+				Title
+			}	
+		}
+		schedules-index{
+			index-container{
+				Index
+				Title
+			}
+		}
+	}
+	intro{
+		plain text
+		wef
+	}
+	section{
+		heading{
+			index
+			title
+		}
+		content{
+			enumeration{
+				
+			}
+		}
+	}
+	schedule{
+	
+	}
+}
+*/
+
+
 body{font-family: Calibri, Optima, sans-serif;}
 
 /*Headings- Act name, Act number, Date of enactment*/

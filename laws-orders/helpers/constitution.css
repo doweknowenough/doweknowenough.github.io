@@ -8,6 +8,10 @@ select{
 	max-width: 20%;
 }
 
+section{
+	display: inline-block;
+}
+
 .document-container{
 	width: 95%;
 	margin: auto;
@@ -18,15 +22,15 @@ select{
 }
 
 .preamble-container{
-	padding-top: 3%;
+	/*padding-top: 3%;*/
 }
 
 .part-container{
-	padding-top: 5%;
+	/*padding-top: 5%;*/
 }
 
 .schedule-container{
-	padding-top: 10%;
+	/*padding-top: 10%;*/
 }
 
 .chapter-container{
@@ -34,12 +38,12 @@ select{
 }
 
 .sub-chapter-container{
-	padding-top: 3%;
-	padding-bottom: 3%;
+	/*padding-top: 3%;*/
+	/*padding-bottom: 3%;*/
 }
 
 .article-container{
-	padding-top: 1%;
+	/*padding-top: 1%;*/
 }
 
 .sp-container{
@@ -68,7 +72,7 @@ select{
 
 .article-heading{
 	text-align: center;
-	padding-bottom: 1%;
+	/*padding-bottom: 1%;*/
 }
 
 .sp-heading{
@@ -77,41 +81,34 @@ select{
 
 .preamble-content{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
-	text-align: justify;
-	text-align-last: left;
+	/*text-align: justify;*/
+	/*text-align-last: left;*/
 }
 
 .article-content{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
-	text-align: justify;
-	text-align-last: left;
+	/*text-align: justify;*/
+	/*text-align-last: left;*/
+	padding-left: 0%;
 }
 
 .sp-content{
 	/**/
 }
 
-.clause{
+.enumeration{
 	/**/
 }
 
-.sub-clause{
-	/*display: inline-block;*/
-}
-
-.clause-index{
+.enumeration-index{
 	/**/
 }
 
-.sub-clause-index{
+.enumeration-content{
 	/**/
 }
 
-.clause-content{
-	/**/
-}
-
-.sub-clause-content{
+.provision{
 	/**/
 }
 
