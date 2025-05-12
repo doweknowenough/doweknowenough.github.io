@@ -41,6 +41,11 @@ section{
 	/*display: inline-block;*/
 }
 
+.document-container{
+	width: 95%;
+	margin: auto;
+}
+
 /*Index*/
 .arrangement{
 
@@ -66,15 +71,6 @@ section{
 
 }
 
-.document-container{
-	width: 95%;
-	margin: auto;
-}
-
-.supplementary-provisions-container{
-	visibility: hidden;
-}
-
 .chapter-container{
 	/**/
 }
@@ -90,6 +86,10 @@ section{
 
 .schedule-container{
 	/*padding-top: 10%;*/
+}
+
+.supplementary-provisions-container{
+	visibility: hidden;
 }
 
 .sp-container{
