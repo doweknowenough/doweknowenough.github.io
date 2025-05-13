@@ -71,6 +71,10 @@ section{
 
 }
 
+.part-container{
+
+}
+
 .chapter-container{
 	/**/
 }
@@ -94,6 +98,10 @@ section{
 
 .sp-container{
 	/**/
+}
+
+.part-heading{
+	text-align: center;
 }
 
 .chapter-heading{
