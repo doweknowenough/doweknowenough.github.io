@@ -37,6 +37,8 @@ document-container{
 
 /*Add text-align-left class, of bootstrap, whereever needed*/
 
+/*Can replace all containers by a simple container class whose width shall be 95% of width of parent*/
+
 section{
 	/*display: inline-block;*/
 }
@@ -71,18 +73,18 @@ section{
 
 }
 
-.part-container{
+/*.part-container{
 
-}
+}*/
 
-.chapter-container{
-	/**/
-}
+/*.chapter-container{
+	
+}*/
 
-.sub-chapter-container{
-	/*padding-top: 3%;*/
-	/*padding-bottom: 3%;*/
-}
+/*.sub-chapter-container{
+	padding-top: 3%;
+	padding-bottom: 3%;
+}*/
 
 .section-container{
 	/*padding-top: 1%;*/
@@ -92,25 +94,25 @@ section{
 	/*padding-top: 10%;*/
 }
 
-.supplementary-provisions-container{
+/*.supplementary-provisions-container{
 	visibility: hidden;
-}
+}*/
 
-.sp-container{
-	/**/
-}
+/*.sp-container{
+	
+}*/
 
-.part-heading{
+/*.part-heading{
 	text-align: center;
-}
+}*/
 
-.chapter-heading{
+/*.chapter-heading{
 	text-align: center;
-}
+}*/
 
-.sub-chapter-heading{
+/*.sub-chapter-heading{
 	text-align: center;
-}
+}*/
 
 .section-heading{
 	text-align: center;
@@ -121,9 +123,9 @@ section{
 	text-align: center;
 }
 
-.sp-heading{
-	/**/
-}
+/*.sp-heading{
+	
+}*/
 
 .section-content{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
@@ -132,25 +134,13 @@ section{
 	padding-left: 0%;
 }
 
-.sp-content{
-	/**/
-}
+/*.sp-content{
+	
+}*/
 
-.enumeration{
-	/**/
-}
-
-.enumeration-index{
-	/**/
-}
-
-.enumeration-content{
-	/**/
-}
-
-.provision{
-	/**/
-}
+/*.provision{
+	
+}*/
 
 /*body{font-family: Calibri, Optima, sans-serif;}*/
 
