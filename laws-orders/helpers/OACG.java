@@ -1,7 +1,8 @@
 import java.util.*;
 import java.io.*;
 
-public class Solution{
+// OriginalActCodeGenerator
+public class OACG{
 	public static void main(String[] args) throws Exception{
 		BufferedWriter writer = new BufferedWriter(new FileWriter("./filename.txt"));
 		Scanner scn = new Scanner(System.in);
@@ -16,6 +17,9 @@ public class Solution{
 		}
 		writer.close();
 	}
+
+	// A function to generate prompt based on input string which specifies
+	// number of various constituent elements
 
 	public static void enumeration(BufferedWriter obj, String s) throws Exception{
 		obj.write(s);
