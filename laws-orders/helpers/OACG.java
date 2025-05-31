@@ -6,20 +6,20 @@ public class OACG{
 	public static void main(String[] args) throws Exception{
 		BufferedWriter writer = new BufferedWriter(new FileWriter("./filename.txt"));
 		Scanner scn = new Scanner(System.in);
-
+		
 		// initial code
 		writer.write("<!doctype html>\n<html>\n\t<head>\n\t\t<title>");
+		// name of act
+		String s = scn.nextLine();
 		writer.write(s);
 		writer.write("</title>\n\t</head>\n\t<body>\n");
 		
-		// name of act
-		String s = scn.nextLine();
-
 		// date
 		// intro
 		// arrangement of chapters
 		// arrangement of sections
-		// arrangement of schedules
+		// arrangement of schedules which may contain a table
+		// Also create a stack which can display what element is being currently worked upon
 
 		makecode(writer,scn,"sections",1);
 		writer.write("\t</body>\n</html>");
@@ -54,10 +54,7 @@ public class OACG{
 			bw.write("</section>\n");
 			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"section content\">\n");
-			
-			// Enter code for writing into section content
 			makecode(bw,scn,"content",numtabs+2);
-			
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
 		}else if(type.equals("enum")){
@@ -74,10 +71,7 @@ public class OACG{
 			bw.write("</section>\n");
 			writetabs(bw,numtabs+2);
 			bw.write("<section class=\"enumerate content\">\n");
-			
-			// Enter code for writing into enumeration content
 			makecode(bw,scn,"content",numtabs+3);
-
 			writetabs(bw,numtabs+2);
 			bw.write("</section>\n");
 			writetabs(bw,numtabs+1);
@@ -85,25 +79,29 @@ public class OACG{
 		}else if(type.equals("proviso")){
 			writetabs(bw,numtabs);
 			bw.write("<section class=\"provision\">\n");
-			
-			// Enter code for writing into provision content
 			makecode(bw,scn,"content",numtabs+1);
-
 			writetabs(bw,numtabs);
 			bw.write("</section>\n");
 		}else if(type.equals("explanation")){
 			writetabs(bw,numtabs);
 			bw.write("<section class=\"explanation\">\n");
-			
-			// Enter code for writing into explanation content
 			makecode(bw,scn,"content",numtabs+1);
-
 			writetabs(bw,numtabs);
 			bw.write("</section>\n");
 		}else if(type.equals("content")){
 			System.out.println("Enumeration or Description or Provision or Explanation?");
 			String s = scn.nextLine();
-			if(s.equals("E")){
+			if(s.equals("D")){
+				System.out.println("Enter the descriptive text");
+				s = scn.nextLine();
+				while(s.equals("-1")==false){
+					writetabs(bw,numtabs+1);
+					bw.write(s);
+					bw.write("\n");
+					System.out.println("Enter -1 if no content ahead like another para else enter the same");
+					s = scn.nextLine();
+				}
+			}else if(s.equals("E")){
 				System.out.println("Enter number of enumerates");
 				int n = scn.nextInt();
 				s = scn.nextLine();
@@ -114,16 +112,6 @@ public class OACG{
 				}
 				writetabs(bw,numtabs+1);
 				bw.write("</section>\n");
-			}else if(s.equals("D")){
-				System.out.println("Enter the descriptive text");
-				s = scn.nextLine();
-				writetabs(bw,numtabs+1);
-				bw.write(s);
-				bw.write("\n");
-				// take a input
-				// ask whether there is enumeration ahead
-				// ask whether there is provision ahead
-				// ask whether there is explanation ahead
 			}else if(s.equals("P")){
 				makecode(bw,scn,"proviso",numtabs);
 			}else if(s.equals("X")){
@@ -132,7 +120,7 @@ public class OACG{
 				System.out.println("Functionality not provided for");
 			}
 			
-			System.out.println("Do we need to continue?");
+			System.out.println("Continue?");
 			s = scn.nextLine();
 			if(s.equals("Y")){
 				makecode(bw,scn,"content",numtabs+1);
@@ -140,8 +128,7 @@ public class OACG{
 		}
 	}
 
-	// A function to generate prompt based on input string which specifies
-	// number of various constituent elements
+	// Function to generate code based on input from another file
 
 	public static void writetabs(BufferedWriter obj, int count) throws Exception{
 		while(count!=0){
