@@ -11,6 +11,7 @@ public class OACG{
 	public static void main(String[] args) throws Exception{
 		System.out.println("Enter 1 to make input file");
 		System.out.println("Enter 2 to generate output file");
+		System.out.println("Enter 3 to remove all newlines from given text file");
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
 		String s = scn.nextLine();
@@ -27,11 +28,21 @@ public class OACG{
 			writer.write("<!doctype html>\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\n\t\t<title>");
 			s = reader2.readLine();
 			writer.write(s);
-			writer.write("</title>\n\t\t<link rel=\"stylesheet\" href=\"./../../helpers/act.css\">\n\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"./../../helpers/favicon.ico\">\n\t</head>\n\t<body>\n");
-			makecode(writer,reader1,reader2,"sections",1);
+			writer.write("</title>\n\t\t<link rel=\"stylesheet\" href=\"./../../helpers/act.css\">\n\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"./../../helpers/favicon.ico\">\n\t</head>\n\t<body>\n\t\t<section class=\"document container\">\n");
+			makecode(writer,reader1,reader2,"sections",2);
 			reader1.close();
 			reader2.close();
-			writer.write("\t</body>\n</html>");
+			writer.write("\t\t</section>\n\t\t</body>\n</html>");
+			writer.close();
+		}else if(n==3){
+			BufferedReader reader = new BufferedReader(new FileReader(args[0]));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(args[1]));
+			while(reader.ready()){
+				s = reader.readLine();
+				writer.write(s);
+				writer.write(' ');
+			}
+			reader.close();
 			writer.close();
 		}
 	}

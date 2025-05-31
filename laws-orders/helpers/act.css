@@ -1,53 +1,48 @@
-/*
-document-container{
-	arrangement{
-		sections-index{
-			index-container{
-				Index
-				Title
-			}	
-		}
-		schedules-index{
-			index-container{
-				Index
-				Title
-			}
-		}
-	}
-	intro{
-		plain text
-		wef
-	}
-	section{
-		heading{
-			index
-			title
-		}
-		content{
-			enumeration{
-				
-			}
-		}
-	}
-	schedule{
-	
-	}
+.document{
+	display: block;
+	width: 90%;
+	margin: auto;
 }
-*/
-
-/*Add text-align-left class, of bootstrap, whereever needed*/
-
-/*Can replace all containers by a simple container class whose width shall be 95% of width of parent*/
-
-/*Can first apply inline-block to all sections and then customise as needed*/
 
 section{
-	/*display: inline-block;*/
+	display: inline;
 }
 
+.display-block{
+	display: block;
+}
+
+.display-flex{
+	display: flex;
+}
+
+.slmargin{
+	margin-left: 0.5vw;
+}
+
+.lmargin{
+	margin-left: 1.5vw;
+}
+
+section.container{
+	margin-top: 1vw;
+} 
+
+/*.container{
+	display: block;
+}*/
+
+.enumerate{
+	/*display: block;*/
+}
+
+/*.container.content{*/
+	/*margin-left: 1vw;*/
+/*}*/
+
 .document-container{
-	width: 95%;
-	margin: auto;
+	/*width: 95%;
+	margin: auto;*/
 }
 
 /*Index*/
@@ -117,12 +112,12 @@ section{
 }*/
 
 .section-heading{
-	text-align: center;
+	/*text-align: center;*/
 	/*padding-bottom: 1%;*/
 }
 
 .schedule-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 /*.sp-heading{
@@ -133,7 +128,7 @@ section{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
 	/*text-align: justify;*/
 	/*text-align-last: left;*/
-	padding-left: 0%;
+	/*padding-left: 0%;*/
 }
 
 /*.sp-content{
