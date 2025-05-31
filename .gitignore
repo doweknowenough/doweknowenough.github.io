@@ -1,7 +1,7 @@
 *.DS_Store
 /north-east
 /reservation
-laws-orders/functionality.txt
+laws-orders/helpers/functionality.txt
 laws-orders/helper.html
 laws-orders/coi/index2.html
 laws-orders/helpers/helper.css
