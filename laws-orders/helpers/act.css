@@ -1,6 +1,8 @@
-.document{
-	width: 70%;
-	margin: auto;
+@media screen and (min-width: 1200px){
+	.document{
+		width: 70%;
+		margin: auto;
+	}
 }
 
 section{
