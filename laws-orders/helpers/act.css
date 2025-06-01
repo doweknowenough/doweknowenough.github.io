@@ -1,6 +1,5 @@
 .document{
-	display: block;
-	width: 90%;
+	width: 70%;
 	margin: auto;
 }
 
@@ -28,47 +27,57 @@ section.container{
 	margin-top: 1vw;
 } 
 
-/*.container{
-	display: block;
-}*/
-
-.enumerate{
-	/*display: block;*/
+.section.content{
+	margin-left: 2vw;
 }
 
-/*.container.content{*/
-	/*margin-left: 1vw;*/
-/*}*/
-
-.document-container{
-	/*width: 95%;
-	margin: auto;*/
+.enumerate.content{
+	margin-left: 0.5vw;
 }
 
-/*Index*/
+.section.heading.title{
+	margin-left: 0.5vw;
+}
+
+.provision{
+	margin-top: 0.25vw;
+	margin-bottom: 0.25vw;
+}
+
 .arrangement{
-
+	margin: auto;
+	width: 100%;
 }
 
-.arrangement-heading{
-
+section.arrangement>section.title{
+	width: 50%;
+	margin: auto;
+	text-align: center;
 }
 
-.arrangement-index{
-
+section.arrangement>table th{
+	text-align: center;
 }
 
-.arrangement-index-heading{
-
+section.arrangement>table th:first-child{
+	width: 15%
 }
 
-.index-container{
-	
+section.arrangement>table td:first-child{
+	text-align: center;
+	width: 15%
 }
 
-.act-intro{
-
+section.arrangement>table td{
+	border-right: solid;
+	border-color: black;
 }
+
+section.arrangement>table td:last-child{
+	border: none;
+	padding-left: 1vw;
+}
+
 
 /*.part-container{
 
@@ -79,17 +88,16 @@ section.container{
 }*/
 
 /*.sub-chapter-container{
-	padding-top: 3%;
-	padding-bottom: 3%;
+	
 }*/
 
-.section-container{
-	/*padding-top: 1%;*/
-}
+/*.section-container{*/
+	
+/*}*/
 
-.schedule-container{
-	/*padding-top: 10%;*/
-}
+/*.schedule-container{*/
+	
+/*}*/
 
 /*.supplementary-provisions-container{
 	visibility: hidden;
@@ -111,25 +119,24 @@ section.container{
 	text-align: center;
 }*/
 
-.section-heading{
+/*.section-heading{*/
 	/*text-align: center;*/
-	/*padding-bottom: 1%;*/
-}
+/*}*/
 
-.schedule-heading{
+/*.schedule-heading{*/
 	/*text-align: center;*/
-}
+/*}*/
 
 /*.sp-heading{
 	
 }*/
 
-.section-content{
+/*.section-content{*/
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
 	/*text-align: justify;*/
 	/*text-align-last: left;*/
 	/*padding-left: 0%;*/
-}
+/*}*/
 
 /*.sp-content{
 	
@@ -146,57 +153,22 @@ section.container{
 h4.act-number-heading{text-align: center;}
 h1.actheading{text-align: center;}*/
 
-
-
-/*Section and schedule enumeration*/
-/*div.index{font-style: italic;}
-a.sectionheading {text-decoration: none;color: black;font-style: italic;}*/
-
 /*Actual Act*/
 /*div.sectionheading{text-align: center;}
 div.omitted{display: none;}
 div.page-break{page-break-after: always;}*/
 
-
-
 /*References*/
 /*sup.reference{font-size: xx-small;}*/
-
 /*a.reference{font-style: italic;}*/
-
-
 
 /*Amendments*/
 /*a.amendment{font-style: italic;}*/
 
-
-
 /*body{font-family: Calibri, Optima, sans-serif;}*/
-
-/*Headings- Act name, Act number, Date of enactment*/
-/*h4.act-date-heading{text-align: right;}*/
-/*h4.act-number-heading{text-align: center;}*/
-/*h1.actheading{text-align: center;}*/
-
 
 
 /*Section and schedule enumeration*/
 /*div.index{font-style: italic;}*/
 /*a.sectionheading {text-decoration: none;color: black;font-style: italic;}*/
 
-/*Actual Act*/
-/*div.sectionheading{text-align: center;}*/
-/*div.omitted{display: none;}*/
-/*div.page-break{page-break-after: always;}*/
-
-
-
-/*References*/
-/*sup.reference{font-size: xx-small;}*/
-
-/*a.reference{font-style: italic;}*/
-
-
-
-/*Amendments*/
-/*a.amendment{font-style: italic;}*/

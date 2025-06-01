@@ -2,9 +2,12 @@ import java.util.*;
 import java.io.*;
 
 // What has not been included?
-// // Arrangement of sections can also be done using javascript after all code has been completed
 // // Date of signing
 // // Date of coming into effect
+// // // Both of above have been added manually in output.html
+// // In arrangement of sections, following have not been provided for
+// // // 1. encapsualtion within headings
+// // // 2. differentiating between sections and schedules
 
 // OriginalActCodeGenerator
 public class OACG{
@@ -19,7 +22,7 @@ public class OACG{
 		if(n==1){
 			BufferedWriter writer = new BufferedWriter(new FileWriter(args[0]));
 			Stack stack = new Stack();
-			makeinput(writer,scn,"sections",stack);
+			makeinput(writer,scn,"intro",stack);
 			writer.close();
 		}else if(n==2){
 			BufferedReader reader1 = new BufferedReader(new FileReader(args[0]));
@@ -28,8 +31,8 @@ public class OACG{
 			writer.write("<!doctype html>\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\n\t\t<title>");
 			s = reader2.readLine();
 			writer.write(s);
-			writer.write("</title>\n\t\t<link rel=\"stylesheet\" href=\"./../../helpers/act.css\">\n\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"./../../helpers/favicon.ico\">\n\t</head>\n\t<body>\n\t\t<section class=\"document container\">\n");
-			makecode(writer,reader1,reader2,"sections",2);
+			writer.write("</title>\n\t\t<link rel=\"stylesheet\" href=\"./../../helpers/act.css\">\n\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"./../../helpers/favicon.ico\">\n\t</head>\n\t<body>\n\t\t<section class=\"document container display-block\">\n");
+			makecode(writer,reader1,reader2,"intro",2);
 			reader1.close();
 			reader2.close();
 			writer.write("\t\t</section>\n\t\t</body>\n</html>");
@@ -48,11 +51,19 @@ public class OACG{
 	}
 
 	public static void makeinput(BufferedWriter bw, Scanner scn, String type, Stack stack) throws Exception{
-		if(type.equals("sections")){
+		if(type.equals("intro")){
 			stack.push("Intro");
 			makeinput(bw,scn,"content",stack);
 			stack.pop();
-
+			makeinput(bw,scn,"secindex",stack);
+		}else if(type.equals("secindex")){
+			System.out.println("Enter number of sections");
+			int n = scn.nextInt();
+			String s = scn.nextLine();
+			bw.write(Integer.toString(2*n));
+			bw.write('\n');
+			makeinput(bw,scn,"sections",stack);
+		}else if(type.equals("sections")){
 			System.out.println("Enter number of sections");
 			int n = scn.nextInt();
 			String s = scn.nextLine();
@@ -123,38 +134,89 @@ public class OACG{
 	}
 
 	public static void makecode(BufferedWriter bw, BufferedReader br, BufferedReader br_act, String type, int numtabs) throws Exception{
-		if(type.equals("sections")){
+		if(type.equals("intro")){
 			writetabs(bw,numtabs+1);
-			bw.write("<section class=\"intro container\">\n");
+			bw.write("<section class=\"intro container display-block\">\n");
 			makecode(bw,br,br_act,"content",numtabs+1);
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
-
+			makecode(bw,br,br_act,"secindex",numtabs);
+		}else if(type.equals("secindex")){
+			writetabs(bw,numtabs+1);
+			bw.write("<section class=\"arrangement container display-block\">\n");
+			writetabs(bw,numtabs+2);
+			bw.write("<section class=\"title display-block\">Arrangement of Sections</section>\n");
+			writetabs(bw,numtabs+2);
+			bw.write("<table>\n");
+			writetabs(bw,numtabs+3);
+			bw.write("<tr>\n");
+			writetabs(bw,numtabs+4);
+			bw.write("<th>Section No.</th>\n");
+			writetabs(bw,numtabs+4);
+			bw.write("<th>Section Title</th>\n");
+			writetabs(bw,numtabs+3);
+			bw.write("</tr>\n");
+			int n = Integer.parseInt(br.readLine());
+			for(int i = 1;i<=n;i++){
+				writetabs(bw,numtabs+3);
+				bw.write("<tr>\n");
+				writetabs(bw,numtabs+4);
+				bw.write("<td>");
+				String s = br_act.readLine();
+				bw.write(s);
+				bw.write("</td>\n");
+				writetabs(bw,numtabs+4);
+				bw.write("<td>");
+				s = br_act.readLine();
+				bw.write(s);
+				bw.write("</td>\n");
+				writetabs(bw,numtabs+3);
+				bw.write("</tr>\n");
+			}
+			writetabs(bw,numtabs+2);
+			bw.write("<table>\n");
+			writetabs(bw,numtabs+1);
+			bw.write("</section>\n");
+			makecode(bw,br,br_act,"sections",numtabs);
+		}else if(type.equals("sections")){
 			int n = Integer.parseInt(br.readLine());
 			for(int i = 1;i<=n;i++){
 				writetabs(bw,numtabs+1);
-				bw.write("<section class=\"section container\">\n");
+				bw.write("<section class=\"section container display-block\">\n");
 				makecode(bw,br,br_act,"section",numtabs+1);
 				writetabs(bw,numtabs+1);
 				bw.write("</section>\n");
 			}
 		}else if(type.equals("section")){
 			writetabs(bw,numtabs+1);
-			bw.write("<section class=\"section title\">\n");
-			String s = br_act.readLine();
+			// bw.write("<section class=\"section title\">\n");
+			bw.write("<section class=\"section heading display-flex\">\n");
 			writetabs(bw,numtabs+2);
+			bw.write("<section class=\"section heading index\">\n");
+			writetabs(bw,numtabs+3);
+			String s = br_act.readLine();
 			bw.write(s);
-			bw.write("\n");
+			bw.write('\n');
+			writetabs(bw,numtabs+2);
+			bw.write("</section>\n");
+			writetabs(bw,numtabs+2);
+			bw.write("<section class=\"section heading title\">\n");
+			writetabs(bw,numtabs+3);
+			s = br_act.readLine();
+			bw.write(s);
+			bw.write('\n');
+			writetabs(bw,numtabs+2);
+			bw.write("</section>\n");
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
 			writetabs(bw,numtabs+1);
-			bw.write("<section class=\"section content\">\n");
+			bw.write("<section class=\"section content display-block\">\n");
 			makecode(bw,br,br_act,"content",numtabs+1);
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
 		}else if(type.equals("enum")){
 			writetabs(bw,numtabs+1);
-			bw.write("<section class=\"enumerate\">\n");
+			bw.write("<section class=\"enumerate display-block display-flex\">\n");
 			writetabs(bw,numtabs+2);
 			bw.write("<section class=\"enumerate index\">\n");
 			String s = br_act.readLine();
@@ -172,13 +234,13 @@ public class OACG{
 			bw.write("</section>\n");
 		}else if(type.equals("proviso")){
 			writetabs(bw,numtabs);
-			bw.write("<section class=\"provision\">\n");
+			bw.write("<section class=\"provision display-block\">\n");
 			makecode(bw,br,br_act,"content",numtabs);
 			writetabs(bw,numtabs);
 			bw.write("</section>\n");
 		}else if(type.equals("explanation")){
 			writetabs(bw,numtabs);
-			bw.write("<section class=\"explanation\">\n");
+			bw.write("<section class=\"explanation display-block\">\n");
 			makecode(bw,br,br_act,"content",numtabs);
 			writetabs(bw,numtabs);
 			bw.write("</section>\n");

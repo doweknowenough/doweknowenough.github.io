@@ -7,7 +7,8 @@ laws-orders/helper.html
 laws-orders/acts/coi/index2.html
 laws-orders/helpers/helper.css
 laws-orders/helpers/helper.js
-laws-orders/test/
+laws-orders/test/test-area/*.txt
+laws-orders/test/helper.html
 laws-orders/helpers/model-act/
 laws-orders/jnk/
 laws-orders/helpers/acts.csv
