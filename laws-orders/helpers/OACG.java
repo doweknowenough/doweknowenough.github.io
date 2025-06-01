@@ -51,11 +51,11 @@ public class OACG{
 
 	public static void makeinput(BufferedWriter bw, Scanner scn, String type, Stack stack) throws Exception{
 		if(type.equals("intro")){
-			stack.push("Intro");
-			makeinput(bw,scn,"content",stack);
-			stack.pop();
 			stack.push("Arrangement");
 			makeinput(bw,scn,"arrangement",stack);
+			stack.pop();
+			stack.push("Intro");
+			makeinput(bw,scn,"content",stack);
 			stack.pop();
 			stack.push("Body");
 			makeinput(bw,scn,"divisions",stack);
@@ -170,12 +170,6 @@ public class OACG{
 	public static void makecode(BufferedWriter bw, BufferedReader br, BufferedReader br_act, String type, int numtabs) throws Exception{
 		if(type.equals("intro")){
 			writetabs(bw,numtabs+1);
-			bw.write("<section class=\"intro container display-block\">\n");
-			makecode(bw,br,br_act,"content",numtabs+1);
-
-			writetabs(bw,numtabs+1);
-			bw.write("</section>\n");
-			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"arrangement container display-block\">\n");
 			writetabs(bw,numtabs+2);
 			bw.write("<section class=\"title display-block\">Arrangement of Sections</section>\n");
@@ -189,11 +183,14 @@ public class OACG{
 			bw.write("<th>Section Title</th>\n");
 			writetabs(bw,numtabs+3);
 			bw.write("</tr>\n");
-
 			makecode(bw,br,br_act,"arrangement",numtabs);
-
 			writetabs(bw,numtabs+2);
 			bw.write("<table>\n");
+			writetabs(bw,numtabs+1);
+			bw.write("</section>\n");
+			writetabs(bw,numtabs+1);
+			bw.write("<section class=\"intro container display-block\">\n");
+			makecode(bw,br,br_act,"content",numtabs+1);
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
 			makecode(bw,br,br_act,"divisions",numtabs);

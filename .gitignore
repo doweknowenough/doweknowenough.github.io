@@ -1,5 +1,6 @@
 *.DS_Store
 *.class
+*.txt
 /north-east
 /reservation
 laws-orders/jnk/
@@ -9,4 +10,3 @@ laws-orders/helpers/helper.html
 laws-orders/helpers/helper.css
 laws-orders/helpers/helper.js
 laws-orders/acts/coi/index2.html
-laws-orders/test/test-area/*.txt
