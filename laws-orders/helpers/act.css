@@ -15,14 +15,6 @@ section{
 	display: flex;
 }
 
-.slmargin{
-	margin-left: 0.5vw;
-}
-
-.lmargin{
-	margin-left: 1.5vw;
-}
-
 section.container{
 	margin-top: 1vw;
 } 
