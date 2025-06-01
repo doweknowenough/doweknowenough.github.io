@@ -91,6 +91,14 @@ section.dates>section{
 	padding-top: 1vw;
 }
 
+section.details>section{
+	display: block;
+}
+
+.details{
+	text-align: center;
+}
+
 
 /*.part-container{
 

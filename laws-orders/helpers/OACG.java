@@ -30,6 +30,12 @@ public class OACG{
 			s = reader2.readLine();
 			writer.write(s);
 			writer.write("</title>\n\t\t<link rel=\"stylesheet\" href=\"./../../helpers/act.css\">\n\t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"./../../helpers/favicon.ico\">\n\t</head>\n\t<body>\n\t\t<section class=\"document container display-block\">\n");
+			writer.write("\t\t\t<section class=\"details container display-block\">\n");
+			writer.write("\t\t\t\t<section class=\"act-name display-block\">" + s + "</section>\n");
+			writer.write("\t\t\t\t<section class=\"pass-date\">Enactment Date- 12th November, 1999</section>\n");
+			writer.write("\t\t\t\t<section class=\"effect-date\">Enforcement Date- 13th September, 2000</section>\n");
+			writer.write("\t\t\t\t<section class=\"act-number\">Act 28 of 2023</section>\n");
+			writer.write("\t\t\t</section>\n");
 			makecode(writer,reader1,reader2,"intro",2);
 			reader1.close();
 			reader2.close();
