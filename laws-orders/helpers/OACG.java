@@ -6,8 +6,7 @@ import java.io.*;
 // // Date of coming into effect
 // // // Both of above have been added manually in output.html
 // // In arrangement of sections, following have not been provided for
-// // // 1. encapsualtion within headings
-// // // 2. differentiating between sections and schedules
+// // // 1. differentiating between sections and schedules
 
 // OriginalActCodeGenerator
 public class OACG{
@@ -18,15 +17,15 @@ public class OACG{
 
 		if(n==1){
 			// Makes input file of type 1
-			BufferedWriter writer = new BufferedWriter(new FileWriter(args[1]));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(args[0]));
 			Stack stack = new Stack();
 			makeinput(writer,scn,"intro",stack);
 			writer.close();
 		}else if(n==3){
 			// code generator using input files of type 1 and type 2
-			BufferedReader reader1 = new BufferedReader(new FileReader(args[1]));
-			BufferedReader reader2 = new BufferedReader(new FileReader(args[2]));
-			BufferedWriter writer = new BufferedWriter(new FileWriter(args[3]));
+			BufferedReader reader1 = new BufferedReader(new FileReader(args[0]));
+			BufferedReader reader2 = new BufferedReader(new FileReader(args[1]));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(args[2]));
 			writer.write("<!doctype html>\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n\t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\n\t\t<title>");
 			s = reader2.readLine();
 			writer.write(s);
@@ -38,8 +37,8 @@ public class OACG{
 			writer.close();
 		}else if(n==2){
 			// replaces '\n' by ' '
-			BufferedReader reader = new BufferedReader(new FileReader(args[1]));
-			BufferedWriter writer = new BufferedWriter(new FileWriter(args[2]));
+			BufferedReader reader = new BufferedReader(new FileReader(args[0]));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(args[1]));
 			while(reader.ready()){
 				s = reader.readLine();
 				writer.write(s);
@@ -55,15 +54,50 @@ public class OACG{
 			stack.push("Intro");
 			makeinput(bw,scn,"content",stack);
 			stack.pop();
-			makeinput(bw,scn,"secindex",stack);
-		}else if(type.equals("secindex")){
-			System.out.println("Enter number of sections");
+			stack.push("Arrangement");
+			makeinput(bw,scn,"arrangement",stack);
+			stack.pop();
+			stack.push("Body");
+			makeinput(bw,scn,"divisions",stack);
+			stack.pop();
+		}else if(type.equals("arrangement")){
+			stack.display();
+			System.out.println("Enter number of divisions");
 			int n = scn.nextInt();
 			String s = scn.nextLine();
-			bw.write(Integer.toString(2*n));
+			bw.write(Integer.toString(n));
 			bw.write('\n');
-			makeinput(bw,scn,"sections",stack);
+			if(n==0){
+				System.out.println("Enter number of sections");
+				n = scn.nextInt();
+				s = scn.nextLine();
+				bw.write(Integer.toString(n));
+				bw.write('\n');
+			}else{
+				for(int i = 1;i<=n;i++){
+					stack.push("Division " + Integer.toString(i) + "/" + Integer.toString(n));
+					makeinput(bw,scn,"arrangement",stack);
+					stack.pop();
+				}
+			}
+		}else if(type.equals("divisions")){
+			stack.display();
+			System.out.println("Enter number of divisions");
+			int n = scn.nextInt();
+			String s = scn.nextLine();
+			bw.write(Integer.toString(n));
+			bw.write('\n');
+			if(n==0){
+				makeinput(bw,scn,"sections",stack);
+			}else{
+				for(int i = 1;i<=n;i++){
+					stack.push("Division " + Integer.toString(i) + "/" + Integer.toString(n));
+					makeinput(bw,scn,"divisions",stack);
+					stack.pop();
+				}
+			}
 		}else if(type.equals("sections")){
+			stack.display();
 			System.out.println("Enter number of sections");
 			int n = scn.nextInt();
 			String s = scn.nextLine();
@@ -138,10 +172,9 @@ public class OACG{
 			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"intro container display-block\">\n");
 			makecode(bw,br,br_act,"content",numtabs+1);
+
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
-			makecode(bw,br,br_act,"secindex",numtabs);
-		}else if(type.equals("secindex")){
 			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"arrangement container display-block\">\n");
 			writetabs(bw,numtabs+2);
@@ -156,28 +189,69 @@ public class OACG{
 			bw.write("<th>Section Title</th>\n");
 			writetabs(bw,numtabs+3);
 			bw.write("</tr>\n");
-			int n = Integer.parseInt(br.readLine());
-			for(int i = 1;i<=n;i++){
-				writetabs(bw,numtabs+3);
-				bw.write("<tr>\n");
-				writetabs(bw,numtabs+4);
-				bw.write("<td>");
-				String s = br_act.readLine();
-				bw.write(s);
-				bw.write("</td>\n");
-				writetabs(bw,numtabs+4);
-				bw.write("<td>");
-				s = br_act.readLine();
-				bw.write(s);
-				bw.write("</td>\n");
-				writetabs(bw,numtabs+3);
-				bw.write("</tr>\n");
-			}
+
+			makecode(bw,br,br_act,"arrangement",numtabs);
+
 			writetabs(bw,numtabs+2);
 			bw.write("<table>\n");
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
-			makecode(bw,br,br_act,"sections",numtabs);
+			makecode(bw,br,br_act,"divisions",numtabs);
+		}else if(type.equals("arrangement")){
+			int n = Integer.parseInt(br.readLine());
+			if(n==0){
+				n = Integer.parseInt(br.readLine());
+				for(int i = 1;i<=n;i++){
+					writetabs(bw,numtabs+3);
+					bw.write("<tr>\n");
+					writetabs(bw,numtabs+4);
+					bw.write("<td>");
+					String s = br_act.readLine();
+					bw.write(s);
+					bw.write("</td>\n");
+					writetabs(bw,numtabs+4);
+					bw.write("<td>");
+					s = br_act.readLine();
+					bw.write(s);
+					bw.write("</td>\n");
+					writetabs(bw,numtabs+3);
+					bw.write("</tr>\n");
+				}
+			}else{
+				for(int i = 1;i<=n;i++){
+					writetabs(bw,numtabs+3);
+					bw.write("<tr class=\"colspan\">\n");
+					writetabs(bw,numtabs+4);
+					bw.write("<td colspan=\"2\">");
+					String s = br_act.readLine();
+					bw.write(s);
+					bw.write("</td>\n");
+					writetabs(bw,numtabs+3);
+					bw.write("</tr>\n");
+					makecode(bw,br,br_act,"arrangement",numtabs);
+				}
+			}
+		}else if(type.equals("divisions")){
+			int n = Integer.parseInt(br.readLine());
+			if(n==0){
+				makecode(bw,br,br_act,"sections",numtabs);
+			}else{
+				for(int i = 1;i<=n;i++){
+					writetabs(bw,numtabs+1);
+					bw.write("<section class=\"division container display-block\">\n");
+					writetabs(bw,numtabs+2);
+					bw.write("<section class=\"division heading display-block\">\n");
+					writetabs(bw,numtabs+3);
+					String s = br_act.readLine();
+					bw.write(s);
+					bw.write('\n');
+					writetabs(bw,numtabs+2);
+					bw.write("</section>\n");
+					makecode(bw,br,br_act,"divisions",numtabs+1);
+					writetabs(bw,numtabs+1);
+					bw.write("</section>\n");
+				}
+			}
 		}else if(type.equals("sections")){
 			int n = Integer.parseInt(br.readLine());
 			for(int i = 1;i<=n;i++){

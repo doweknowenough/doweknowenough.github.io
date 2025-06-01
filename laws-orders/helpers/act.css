@@ -75,6 +75,22 @@ section.arrangement>table td:last-child{
 	padding-left: 1vw;
 }
 
+section.arrangement>table tr.colspan{
+	height: 30px;
+}
+
+section.dates>section{
+	display: block;
+}
+
+.division.heading{
+	text-align: center;
+}
+
+.division.container{
+	padding-top: 1vw;
+}
+
 
 /*.part-container{
 
