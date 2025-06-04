@@ -44,7 +44,7 @@ public class OACG{
 			makecode(writer,reader1,reader2,"intro",2);
 			reader1.close();
 			reader2.close();
-			writer.write("\t\t</section>\n\t\t</body>\n</html>");
+			writer.write("\t\t</section>\n\t</body>\n</html>");
 			writer.close();
 		}else if(n==2){
 			// replaces '\n' by ' '
@@ -87,6 +87,12 @@ public class OACG{
 			}else{
 				for(int i = 1;i<=n;i++){
 					stack.push("Division " + Integer.toString(i) + "/" + Integer.toString(n));
+					stack.display();
+					System.out.println("Does the division has a title?");
+					int m = scn.nextInt();
+					s = scn.nextLine();
+					bw.write(Integer.toString(m));
+					bw.write('\n');
 					makeinput(bw,scn,"arrangement",stack);
 					stack.pop();
 				}
@@ -103,6 +109,12 @@ public class OACG{
 			}else{
 				for(int i = 1;i<=n;i++){
 					stack.push("Division " + Integer.toString(i) + "/" + Integer.toString(n));
+					stack.display();
+					System.out.println("Does the division has a title?");
+					int m = scn.nextInt();
+					s = scn.nextLine();
+					bw.write(Integer.toString(m));
+					bw.write('\n');
 					makeinput(bw,scn,"divisions",stack);
 					stack.pop();
 				}
@@ -227,15 +239,18 @@ public class OACG{
 				}
 			}else{
 				for(int i = 1;i<=n;i++){
-					writetabs(bw,numtabs+3);
-					bw.write("<tr class=\"colspan\">\n");
-					writetabs(bw,numtabs+4);
-					bw.write("<td colspan=\"2\">");
-					String s = br_act.readLine();
-					bw.write(s);
-					bw.write("</td>\n");
-					writetabs(bw,numtabs+3);
-					bw.write("</tr>\n");
+					int m = Integer.parseInt(br.readLine());
+					if(m!=-1){
+						writetabs(bw,numtabs+3);
+						bw.write("<tr class=\"colspan\">\n");
+						writetabs(bw,numtabs+4);
+						bw.write("<td colspan=\"2\">");
+						String s = br_act.readLine();
+						bw.write(s);
+						bw.write("</td>\n");
+						writetabs(bw,numtabs+3);
+						bw.write("</tr>\n");	
+					}
 					makecode(bw,br,br_act,"arrangement",numtabs);
 				}
 			}
@@ -245,19 +260,24 @@ public class OACG{
 				makecode(bw,br,br_act,"sections",numtabs);
 			}else{
 				for(int i = 1;i<=n;i++){
-					writetabs(bw,numtabs+1);
-					bw.write("<section class=\"division container display-block\">\n");
-					writetabs(bw,numtabs+2);
-					bw.write("<section class=\"division heading display-block\">\n");
-					writetabs(bw,numtabs+3);
-					String s = br_act.readLine();
-					bw.write(s);
-					bw.write('\n');
-					writetabs(bw,numtabs+2);
-					bw.write("</section>\n");
+					int m = Integer.parseInt(br.readLine());
+					if(m!=-1){
+						writetabs(bw,numtabs+1);
+						bw.write("<section class=\"division container display-block\">\n");
+						writetabs(bw,numtabs+2);
+						bw.write("<section class=\"division heading display-block\">\n");
+						writetabs(bw,numtabs+3);
+						String s = br_act.readLine();
+						bw.write(s);
+						bw.write('\n');
+						writetabs(bw,numtabs+2);
+						bw.write("</section>\n");
+					}
 					makecode(bw,br,br_act,"divisions",numtabs+1);
-					writetabs(bw,numtabs+1);
-					bw.write("</section>\n");
+					if(m!=-1){
+						writetabs(bw,numtabs+1);
+						bw.write("</section>\n");
+					}
 				}
 			}
 		}else if(type.equals("sections")){
