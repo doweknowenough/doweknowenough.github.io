@@ -5,11 +5,11 @@
 }
 
 select{
-	max-width: 20%;
+	/*max-width: 20%;*/
 }
 
 section{
-	display: inline-block;
+	/*display: inline-block;*/
 }
 
 .document-container{
@@ -18,7 +18,7 @@ section{
 }
 
 .supplementary-provisions-container{
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 
 .preamble-container{
@@ -51,27 +51,27 @@ section{
 }
 
 .preamble-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .part-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .schedule-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .chapter-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .sub-chapter-heading{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 .article-heading{
-	text-align: center;
+	/*text-align: center;*/
 	/*padding-bottom: 1%;*/
 }
 
@@ -89,7 +89,7 @@ section{
 	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
 	/*text-align: justify;*/
 	/*text-align-last: left;*/
-	padding-left: 0%;
+	/*padding-left: 0%;*/
 }
 
 .sp-content{
@@ -155,41 +155,5 @@ schedules
 constitution orders
 Use children/ sibling etc type css functionality
 Note- with each sublevel, there should be addition in margin in terms of percentage i.e. 10% to 15% to 20% types. Also see the effect on smaller screens like phones*/
-
-/*
-Article{
-	Heading{
-		Index
-		Title
-	}
-	Content{
-		Non-enumerated-content
-		Enumerated-content (Clause){
-			Index
-			Non-enumerated-content
-			Enumerated-content (Sub-clause){
-				Index
-				Content
-			}
-		}
-		Proviso{
-			Non-enumerated-content
-			Enumerated-content (Clause){
-				Index
-				Content
-			}
-		}
-	}
-}
-*/
-
-
-
-
-
-
-
-
-
 
 

@@ -118,11 +118,17 @@ public class OACG{
 				for(int i = 1;i<=n;i++){
 					stack.push("Division " + Integer.toString(i) + "/" + Integer.toString(n));
 					stack.display();
-					System.out.println("Does the division has a title?");
+					System.out.println("Does the division header have a title?");
 					int m = scn.nextInt();
 					s = scn.nextLine();
 					bw.write(Integer.toString(m));
 					bw.write('\n');
+					if(m!=-1){
+						System.out.println("Enter the name of class associated with this division");
+						s = scn.nextLine();
+						bw.write(s);
+						bw.write('\n');
+					}
 					makeinput(bw,scn,"divisions",stack);
 					stack.pop();
 				}
@@ -167,6 +173,8 @@ public class OACG{
 			String s = scn.nextLine();
 			System.out.println("Enter 1 for normal content schedule");
 			System.out.println("Enter 2 for division based schedule");
+			bw.write(Integer.toString(n));
+			bw.write('\n');
 			if(n==1){
 				// Normal content type schedule i.e. no division and no table. simply plain
 				makeinput(bw,scn,"content",stack);
@@ -332,12 +340,15 @@ public class OACG{
 				for(int i = 1;i<=n;i++){
 					int m = Integer.parseInt(br.readLine());
 					if(m!=-1){
+						String s = br.readLine();
 						writetabs(bw,numtabs+1);
-						bw.write("<section class=\"division container display-block\">\n");
+						bw.write("<section class=\"division " + s);
+						bw.write(" container display-block\">\n");
 						writetabs(bw,numtabs+2);
-						bw.write("<section class=\"division heading display-block\">\n");
+						bw.write("<section class=\"division " + s);
+						bw.write(" heading display-block\">\n");
 						writetabs(bw,numtabs+3);
-						String s = br_act.readLine();
+						s = br_act.readLine();
 						bw.write(s);
 						bw.write('\n');
 						writetabs(bw,numtabs+2);

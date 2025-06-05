@@ -10,10 +10,10 @@
 //   });
 // });
 
-$(document).ready(adjustmargin("enumeration"));
+// $(document).ready(adjustmargin("enumeration"));
 
 function adjustmargin(enumeration){
-	document.write("Hello World");
+	// document.write("Hello World");
 	// console.log("");
 	// print("Hello");
 	var x = document.getElementByClassName("enumeration").parentElement.style.color;
