@@ -1,13 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-// What has not been included?
-// // Date of signing
-// // Date of coming into effect
-// // // Both of above have been added manually in output.html
-// // In arrangement of sections, following have not been provided for
-// // // 1. differentiating between sections and schedules
-
 // OriginalActCodeGenerator
 public class OACG{
 	public static void main(String[] args) throws Exception{
@@ -19,7 +12,7 @@ public class OACG{
 			// Makes input file of type 1
 			BufferedWriter writer = new BufferedWriter(new FileWriter(args[0]));
 			Stack stack = new Stack();
-			makeinput(writer,scn,"intro",stack);
+			makeinput(writer,scn,"arrangement",stack);
 			writer.close();
 		}else if(n==3){
 			// code generator using input files of type 1 and type 2
@@ -61,17 +54,15 @@ public class OACG{
 	}
 
 	public static void makeinput(BufferedWriter bw, Scanner scn, String type, Stack stack) throws Exception{
-		if(type.equals("intro")){
-			stack.push("Arrangement");
-			makeinput(bw,scn,"arrangement",stack);
+		if(type.equals("arrangement")){
+			stack.push("Sections Arrangement");
+			makeinput(bw,scn,"arrangesections",stack);
 			stack.pop();
-			stack.push("Intro");
-			makeinput(bw,scn,"content",stack);
+			stack.push("Schedules Arrangement");
+			makeinput(bw,scn,"arrangeschedules",stack);
 			stack.pop();
-			stack.push("Body");
-			makeinput(bw,scn,"divisions",stack);
-			stack.pop();
-		}else if(type.equals("arrangement")){
+			makeinput(bw,scn,"intro",stack);
+		}else if(type.equals("arrangesections")){
 			stack.display();
 			System.out.println("Enter number of divisions");
 			int n = scn.nextInt();
@@ -93,10 +84,25 @@ public class OACG{
 					s = scn.nextLine();
 					bw.write(Integer.toString(m));
 					bw.write('\n');
-					makeinput(bw,scn,"arrangement",stack);
+					makeinput(bw,scn,"arrangesections",stack);
 					stack.pop();
 				}
 			}
+		}else if(type.equals("arrangeschedules")){
+			stack.display();
+			System.out.println("Enter number of schedules");
+			int n = scn.nextInt();
+			String s = scn.nextLine();
+			bw.write(Integer.toString(n));
+			bw.write('\n');
+		}else if(type.equals("intro")){
+			stack.push("Intro");
+			makeinput(bw,scn,"content",stack);
+			stack.pop();
+			stack.push("Body");
+			makeinput(bw,scn,"divisions",stack);
+			makeinput(bw,scn,"schedules",stack);
+			stack.pop();
 		}else if(type.equals("divisions")){
 			stack.display();
 			System.out.println("Enter number of divisions");
@@ -135,6 +141,35 @@ public class OACG{
 			stack.display();
 			System.out.println("Section content");
 			makeinput(bw,scn,"content",stack);
+		}else if(type.equals("schedules")){
+			stack.display();
+			System.out.println("Enter number of schedules");
+			int n = scn.nextInt();
+			String s = scn.nextLine();
+			bw.write(Integer.toString(n));
+			bw.write('\n');
+			if(n>0){
+				for(int i = 1;i<=n;i++){
+					stack.push("Schedule " + Integer.toString(i) + "/" + Integer.toString(n));
+					stack.display();
+					makeinput(bw,scn,"schedule",stack);
+					stack.pop();
+				}
+			}
+		}else if(type.equals("schedule")){
+			stack.display();
+			System.out.println("Enter type of schedule");
+			int n = scn.nextInt();
+			String s = scn.nextLine();
+			System.out.println("Enter 1 for normal content schedule");
+			System.out.println("Enter 2 for division based schedule");
+			if(n==1){
+				// Normal content type schedule i.e. no division and no table. simply plain
+				makeinput(bw,scn,"content",stack);
+			}else if(n==2){
+				// division based schedule
+				makeinput(bw,scn,"divisions",stack);
+			}
 		}else if(type.equals("enum")){
 			stack.display();
 			System.out.println("Enumeration content");
@@ -145,7 +180,7 @@ public class OACG{
 			makeinput(bw,scn,"content",stack);
 		}else if(type.equals("content")){
 			stack.display();
-			System.out.println("Enumeration or Description or Provision or Explanation?");
+			System.out.println("Enumeration or Description or Provision or Xplanation?");
 			String s = scn.nextLine();
 			bw.write(s);
 			bw.write('\n');
@@ -206,7 +241,20 @@ public class OACG{
 			bw.write("<th>Section Title</th>\n");
 			writetabs(bw,numtabs+3);
 			bw.write("</tr>\n");
-			makecode(bw,br,br_act,"arrangement",numtabs);
+			makecode(bw,br,br_act,"arrangesections",numtabs);
+			writetabs(bw,numtabs+3);
+			bw.write("<tr class=\"solid-border\">\n");
+			writetabs(bw,numtabs+4);
+			bw.write("<td class=\"hidden-border\">\n");
+			writetabs(bw,numtabs+4);
+			bw.write("</td>\n");
+			writetabs(bw,numtabs+4);
+			bw.write("<td>\n");
+			writetabs(bw,numtabs+4);
+			bw.write("</td>\n");
+			writetabs(bw,numtabs+3);
+			bw.write("</tr>\n");
+			makecode(bw,br,br_act,"arrangeschedules",numtabs);
 			writetabs(bw,numtabs+2);
 			bw.write("<table>\n");
 			writetabs(bw,numtabs+1);
@@ -217,7 +265,8 @@ public class OACG{
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
 			makecode(bw,br,br_act,"divisions",numtabs);
-		}else if(type.equals("arrangement")){
+			makecode(bw,br,br_act,"schedules",numtabs);
+		}else if(type.equals("arrangesections")){
 			int n = Integer.parseInt(br.readLine());
 			if(n==0){
 				n = Integer.parseInt(br.readLine());
@@ -251,7 +300,24 @@ public class OACG{
 						writetabs(bw,numtabs+3);
 						bw.write("</tr>\n");	
 					}
-					makecode(bw,br,br_act,"arrangement",numtabs);
+					makecode(bw,br,br_act,"arrangesections",numtabs);
+				}
+			}
+		}else if(type.equals("arrangeschedules")){
+			int n = Integer.parseInt(br.readLine());
+			if(n>0){
+				for(int i = 1;i<=n;i++){
+					writetabs(bw,numtabs+3);
+					bw.write("<tr>\n");
+					writetabs(bw,numtabs+4);
+					bw.write("<td></td>\n");
+					writetabs(bw,numtabs+4);
+					bw.write("<td>");
+					String s = br_act.readLine();
+					bw.write(s);
+					bw.write("</td>\n");
+					writetabs(bw,numtabs+3);
+					bw.write("</tr>\n");
 				}
 			}
 		}else if(type.equals("divisions")){
@@ -315,6 +381,58 @@ public class OACG{
 			makecode(bw,br,br_act,"content",numtabs+1);
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
+		}else if(type.equals("schedules")){
+			int n = Integer.parseInt(br.readLine());
+			if(n>0){
+				for(int i = 1;i<=n;i++){
+					writetabs(bw,numtabs+1);
+					bw.write("<section class=\"schedule container display-block\">\n");
+					writetabs(bw,numtabs+2);
+					bw.write("<section class=\"schedule header display-block\">\n");
+					writetabs(bw,numtabs+3);
+					bw.write("<section class=\"schedule heading display-block\">\n");
+					writetabs(bw,numtabs+4);
+					String s = br_act.readLine();
+					bw.write(s);
+					bw.write('\n');
+					writetabs(bw,numtabs+3);
+					bw.write("</section>\n");
+					writetabs(bw,numtabs+3);
+					bw.write("<section class=\"schedule title display-block\">\n");
+					writetabs(bw,numtabs+4);
+					s = br_act.readLine();
+					bw.write(s);
+					bw.write('\n');
+					writetabs(bw,numtabs+3);
+					bw.write("</section>\n");
+					writetabs(bw,numtabs+3);
+					bw.write("<section class=\"schedule reference display-block\">\n");
+					writetabs(bw,numtabs+4);
+					s = br_act.readLine();
+					bw.write(s);
+					bw.write('\n');
+					writetabs(bw,numtabs+3);
+					bw.write("</section>\n");
+					writetabs(bw,numtabs+2);
+					bw.write("</section>\n");
+					writetabs(bw,numtabs+2);
+					bw.write("<section class=\"schedule content display-block\">\n");
+					makecode(bw,br,br_act,"schedule",numtabs+1);
+					writetabs(bw,numtabs+2);
+					bw.write("</section>\n");
+					writetabs(bw,numtabs+1);
+					bw.write("</section>\n");
+				}
+			}
+		}else if(type.equals("schedule")){
+			int n = Integer.parseInt(br.readLine());
+			if(n==1){
+				// content based
+				makecode(bw,br,br_act,"content",numtabs+1);
+			}else if(n==2){
+				// division based
+				makecode(bw,br,br_act,"divisions",numtabs+1);
+			}
 		}else if(type.equals("enum")){
 			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"enumerate display-block display-flex\">\n");

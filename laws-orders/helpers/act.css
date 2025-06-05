@@ -52,6 +52,27 @@ section.arrangement>section.title{
 	text-align: center;
 }
 
+section.arrangement>table{
+	border-bottom: solid;
+	border-color: black;
+	width: 80%;
+	margin: auto;
+}
+
+section.arrangement>table .solid-border{
+	border-top: solid;
+	border-color: black;
+}
+
+td.hidden-border{
+	border-style: hidden;
+}
+
+section.arrangement>table tr:last-child{
+	height: 50px;
+	vertical-align: top;
+}
+
 section.arrangement>table th{
 	text-align: center;
 }
@@ -100,6 +121,10 @@ section.details>section{
 }
 
 .indiacode-link{
+	text-align: center;
+}
+
+section.schedule.header{
 	text-align: center;
 }
 
