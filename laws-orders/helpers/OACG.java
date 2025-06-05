@@ -3,6 +3,8 @@ import java.io.*;
 
 // OriginalActCodeGenerator
 public class OACG{
+	public static int total_sections = 0;
+	
 	public static void main(String[] args) throws Exception{
 		Scanner scn = new Scanner(System.in);
 		int n = args.length;
@@ -133,15 +135,17 @@ public class OACG{
 			bw.write(Integer.toString(n));
 			bw.write('\n');
 			for(int i = 1;i<=n;i++){
-				stack.push("Section " + Integer.toString(i) + "/" + Integer.toString(n));
+				stack.push("Section " + Integer.toString(i+total_sections) + "/" + Integer.toString(n+total_sections));
 				makeinput(bw,scn,"section",stack);
 				stack.pop();
 			}
+			total_sections+=n;
 		}else if(type.equals("section")){
 			stack.display();
 			System.out.println("Section content");
 			makeinput(bw,scn,"content",stack);
 		}else if(type.equals("schedules")){
+			total_sections = 0;
 			stack.display();
 			System.out.println("Enter number of schedules");
 			int n = scn.nextInt();
