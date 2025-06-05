@@ -169,24 +169,9 @@ section.schedule.header{
 	text-align: center;
 }*/
 
-/*.section-heading{*/
-	/*text-align: center;*/
-/*}*/
-
-/*.schedule-heading{*/
-	/*text-align: center;*/
-/*}*/
-
 /*.sp-heading{
 	
 }*/
-
-/*.section-content{*/
-	/*This has to be applied to each clause or subclause or explanation or proviso separately as the case may be*/
-	/*text-align: justify;*/
-	/*text-align-last: left;*/
-	/*padding-left: 0%;*/
-/*}*/
 
 /*.sp-content{
 	
@@ -198,15 +183,9 @@ section.schedule.header{
 
 /*body{font-family: Calibri, Optima, sans-serif;}*/
 
-/*Headings- Act name, Act number, Date of enactment*/
-/*h4.act-date-heading{text-align: right;}
-h4.act-number-heading{text-align: center;}
-h1.actheading{text-align: center;}*/
-
 /*Actual Act*/
-/*div.sectionheading{text-align: center;}
-div.omitted{display: none;}
-div.page-break{page-break-after: always;}*/
+/*div.omitted{display: none;}*/
+/*div.page-break{page-break-after: always;}*/
 
 /*References*/
 /*sup.reference{font-size: xx-small;}*/
