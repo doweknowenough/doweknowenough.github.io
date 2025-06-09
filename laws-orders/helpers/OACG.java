@@ -14,6 +14,7 @@ public class OACG{
 			// Makes input file of type 1
 			BufferedWriter writer = new BufferedWriter(new FileWriter(args[0]));
 			Stack stack = new Stack();
+			total_sections = 0;
 			makeinput(writer,scn,"arrangement",stack);
 			writer.close();
 		}else if(n==3){
@@ -36,6 +37,7 @@ public class OACG{
 			s = reader2.readLine();
 			writer.write("\t\t\t\t<section class=\"indiacode-link\"><a href=\"" + s + "\" target=\"_blank\">Indiacode Link</a></section>\n");
 			writer.write("\t\t\t</section>\n");
+			total_sections = 0;
 			makecode(writer,reader1,reader2,"intro",2);
 			reader1.close();
 			reader2.close();
@@ -276,6 +278,7 @@ public class OACG{
 			makecode(bw,br,br_act,"content",numtabs+1);
 			writetabs(bw,numtabs+1);
 			bw.write("</section>\n");
+			total_sections = 0;
 			makecode(bw,br,br_act,"divisions",numtabs);
 			makecode(bw,br,br_act,"schedules",numtabs);
 		}else if(type.equals("arrangesections")){
@@ -292,12 +295,13 @@ public class OACG{
 					bw.write("</td>\n");
 					writetabs(bw,numtabs+4);
 					bw.write("<td>");
+					bw.write("<a href=\"#sec" + Integer.toString(i+total_sections) + "\">");
 					s = br_act.readLine();
-					bw.write(s);
-					bw.write("</td>\n");
+					bw.write(s + "</a></td>\n");
 					writetabs(bw,numtabs+3);
 					bw.write("</tr>\n");
 				}
+				total_sections+=n;
 			}else{
 				for(int i = 1;i<=n;i++){
 					int m = Integer.parseInt(br.readLine());
@@ -325,9 +329,9 @@ public class OACG{
 					bw.write("<td></td>\n");
 					writetabs(bw,numtabs+4);
 					bw.write("<td>");
+					bw.write("<a href=\"#sch" + Integer.toString(i) + "\">");
 					String s = br_act.readLine();
-					bw.write(s);
-					bw.write("</td>\n");
+					bw.write(s + "</a></td>\n");
 					writetabs(bw,numtabs+3);
 					bw.write("</tr>\n");
 				}
@@ -365,11 +369,12 @@ public class OACG{
 			int n = Integer.parseInt(br.readLine());
 			for(int i = 1;i<=n;i++){
 				writetabs(bw,numtabs+1);
-				bw.write("<section class=\"section container display-block\">\n");
+				bw.write("<section id=\"sec" + Integer.toString(i+total_sections) + "\" class=\"section container display-block\">\n");
 				makecode(bw,br,br_act,"section",numtabs+1);
 				writetabs(bw,numtabs+1);
 				bw.write("</section>\n");
 			}
+			total_sections+=n;
 		}else if(type.equals("section")){
 			writetabs(bw,numtabs+1);
 			bw.write("<section class=\"section heading display-flex\">\n");
@@ -401,7 +406,7 @@ public class OACG{
 			if(n>0){
 				for(int i = 1;i<=n;i++){
 					writetabs(bw,numtabs+1);
-					bw.write("<section class=\"schedule container display-block\">\n");
+					bw.write("<section id=\"sch" + Integer.toString(i) + "\" class=\"schedule container display-block\">\n");
 					writetabs(bw,numtabs+2);
 					bw.write("<section class=\"schedule header display-block\">\n");
 					writetabs(bw,numtabs+3);
