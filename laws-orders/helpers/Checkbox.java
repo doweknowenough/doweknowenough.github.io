@@ -17,6 +17,8 @@ public class Checkbox{
 		int n = scn.nextInt();
 		String s = scn.nextLine();
 		if(n==1){
+			System.out.println("Removed section id from schedules?");
+			System.out.println("Removed unnecessary HTML from schedules such as titles/ section container in single section schedule?");
 			System.out.println("Made changes in code of acts, it amends?");
 			System.out.println("Made changes in code of acts, it repeals?");
 			System.out.println("Made changes to list of acts in force or repealed?");

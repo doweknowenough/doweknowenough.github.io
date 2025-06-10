@@ -55,6 +55,9 @@ public class OACG{
 			reader.close();
 			writer.close();
 		}
+
+		System.out.println("Update compliance/ caution in Checkbox.java file.");
+		System.out.println("Now run Checkbox.java file to ensure compliance.");
 	}
 
 	public static void makeinput(BufferedWriter bw, Scanner scn, String type, Stack stack) throws Exception{
