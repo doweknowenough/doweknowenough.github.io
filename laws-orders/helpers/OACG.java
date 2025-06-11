@@ -133,6 +133,11 @@ public class OACG{
 						s = scn.nextLine();
 						bw.write(s);
 						bw.write('\n');
+						System.out.println("Does the divison has multi- lined heading?");
+						m = scn.nextInt();
+						s = scn.nextLine();
+						bw.write(Integer.toString(m));
+						bw.write('\n');
 					}
 					makeinput(bw,scn,"divisions",stack);
 					stack.pop();
@@ -354,10 +359,30 @@ public class OACG{
 						writetabs(bw,numtabs+2);
 						bw.write("<section class=\"division " + s);
 						bw.write(" heading display-block\">\n");
-						writetabs(bw,numtabs+3);
-						s = br_act.readLine();
-						bw.write(s);
-						bw.write('\n');
+						int sep_line_header = Integer.parseInt(br.readLine());
+						if(sep_line_header!=-1){
+							writetabs(bw,numtabs+3);
+							bw.write("<section class=\"division heading index display-block\">\n");
+							writetabs(bw,numtabs+4);
+							s = br_act.readLine();
+							bw.write(s);
+							bw.write('\n');
+							writetabs(bw,numtabs+3);
+							bw.write("</section>\n");
+							writetabs(bw,numtabs+3);
+							bw.write("<section class=\"division heading title display-block\">\n");
+							writetabs(bw,numtabs+4);
+							s = br_act.readLine();
+							bw.write(s);
+							bw.write('\n');
+							writetabs(bw,numtabs+3);
+							bw.write("</section>\n");
+						}else{
+							writetabs(bw,numtabs+3);
+							s = br_act.readLine();
+							bw.write(s);
+							bw.write('\n');
+						}
 						writetabs(bw,numtabs+2);
 						bw.write("</section>\n");
 					}
