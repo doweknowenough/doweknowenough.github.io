@@ -89,6 +89,7 @@ section.arrangement>table td:first-child{
 section.arrangement>table td{
 	border-right: solid;
 	border-color: black;
+	vertical-align: top;
 }
 
 section.arrangement>table td:last-child{
@@ -131,6 +132,25 @@ section.details>section{
 section.schedule.header{
 	text-align: center;
 }
+
+section.table>table{
+	width: 80%;
+	margin: auto;
+}
+
+section.table>table td{
+	border: solid;
+	border-color: black;
+}
+
+/*.provision, .explanation{
+	margin-left: 50px;
+}*/
+
+/*section.explanation>section.enumeration{
+	width: 50%;
+	margin-left: 50px;
+}*/
 
 
 /*.part-container{
