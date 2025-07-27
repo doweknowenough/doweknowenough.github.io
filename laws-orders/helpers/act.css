@@ -143,6 +143,14 @@ section.table>table td{
 	border-color: black;
 }
 
+section.table>table td[rowspan]{
+	vertical-align: middle;
+}
+
+section.table>table td[colspan]{
+	text-align: center;
+}
+
 /*.provision, .explanation{
 	margin-left: 50px;
 }*/
