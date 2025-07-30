@@ -20,7 +20,7 @@ section{
 section.navbar{
 	border-color: black;
 	border: solid;
-	width: 80%;
+	/*width: 80%;*/
 }
 
 section.select{
