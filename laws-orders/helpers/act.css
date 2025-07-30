@@ -17,9 +17,24 @@ section{
 	display: flex;
 }
 
+section.navbar{
+	border-color: black;
+	border: solid;
+	width: 80%;
+}
+
+section.select{
+	max-width: 24%;
+}
+
+select{
+	max-width: 100%;
+}
+
 section.container{
+	/*width: 100%;*/
 	margin-top: 1vw;
-} 
+}
 
 .section.content{
 	margin-left: 2vw;
