@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Do we know enough?</title>
+    </head>
+    <body>
+        <div id="test"></div>
+        <script type="text/javascript">
+            fetch("sample.json")
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector("#test").innerText = data.sentence
+            })
+        </script>
+    </body>
+</html>
